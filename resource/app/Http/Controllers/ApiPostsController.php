@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ApiPostsController extends Controller
 {
     public function listResouceUserPosts(Request $request)
-    {    
-        return Post::all();
+    {     
+        return Post::where('user_id', $request->user()->id)->get();
     }
 }
